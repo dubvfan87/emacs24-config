@@ -103,9 +103,10 @@
  '(ecb-auto-activate t)
  '(ecb-layout-name "left8")
  '(ecb-layout-window-sizes (quote (("left8" (ecb-directories-buffer-name 0.21022727272727273 . 0.26) (ecb-sources-buffer-name 0.21022727272727273 . 0.24) (ecb-methods-buffer-name 0.21022727272727273 . 0.16) (ecb-history-buffer-name 0.21022727272727273 . 0.32)))))
+ '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(ecb-source-path (quote ("/home/matt" ("/home/matt/www/chartpin" "chartpin") ("/ssh:matt@intsims.matriclabs.com:/var/www/" "intsims-www") ("/ssh:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django"))))
  '(ecb-tip-of-the-day nil)
- '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((js-indent-level . 2)))))
 (custom-set-faces
@@ -114,5 +115,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ecb-default-highlight-face ((((class color) (background dark)) (:background "RoyalBlue"))))
- '(ecb-tree-guide-line-face ((((class color) (background dark)) (:inherit ecb-default-general-face :foreground "gray"))))
- )
+ '(ecb-tree-guide-line-face ((((class color) (background dark)) (:inherit ecb-default-general-face :foreground "gray")))))

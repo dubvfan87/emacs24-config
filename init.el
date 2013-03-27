@@ -91,6 +91,10 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/php-mode-1.5.0")
 (require 'php-mode)
 
+(add-to-list 'load-path "~/.emacs.d/extra/jinja2-mode")
+(require 'jinja2-mode)
+
+
 (add-to-list 'load-path "~/.emacs.d/extra/ecb")
 (require 'ecb)
 

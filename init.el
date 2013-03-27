@@ -32,8 +32,7 @@
   (setq mouse-sel-mode t))
 
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 (setq default-tab-width 2)
@@ -70,10 +69,10 @@
 ;; Color Theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/elpa/color-theme-6.6.0")
-(add-to-list 'load-path "~/.emacs.d")
 (require 'color-theme)
 (color-theme-initialize)
 ;;(color-theme-taming-mr-arneson)
+(add-to-list 'load-path "~/.emacs.d/extra")
 (require 'color-theme-tm)
 (color-theme-tm)
 (set-face-font 'default "InConsolata-10")
@@ -89,8 +88,10 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/apache-mode-2.0")
 (require 'apache-mode)
 
+(add-to-list 'load-path "~/.emacs.d/elpa/php-mode-1.5.0")
+(require 'php-mode)
 
-(add-to-list 'load-path "~/.emacs.d/ecb")
+(add-to-list 'load-path "~/.emacs.d/extra/ecb")
 (require 'ecb)
 
 (custom-set-variables

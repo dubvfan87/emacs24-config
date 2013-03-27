@@ -84,19 +84,32 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/elpa/js2-mode-20130307")
 (require 'js2-mode)
-
 (add-to-list 'load-path "~/.emacs.d/elpa/apache-mode-2.0")
 (require 'apache-mode)
-
 (add-to-list 'load-path "~/.emacs.d/elpa/php-mode-1.5.0")
 (require 'php-mode)
-
 (add-to-list 'load-path "~/.emacs.d/extra/jinja2-mode")
 (require 'jinja2-mode)
 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ECB (Emacs Code Browser)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/extra/ecb")
 (require 'ecb)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Helm
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/extra/helm")
+(require 'helm-config)
+(helm-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Whitespace Highlighting
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'whitespace)
+;(autoload 'whitespace-mode           "whitespace" t)
+;(autoload 'whitespace-toggle-options "whitespace" t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -106,10 +119,17 @@
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(ecb-auto-activate t)
  '(ecb-layout-name "left8")
- '(ecb-layout-window-sizes (quote (("left8" (ecb-directories-buffer-name 0.21022727272727273 . 0.26) (ecb-sources-buffer-name 0.21022727272727273 . 0.24) (ecb-methods-buffer-name 0.21022727272727273 . 0.16) (ecb-history-buffer-name 0.21022727272727273 . 0.32)))))
+ '(ecb-layout-window-sizes (quote (("left8"
+                                    (ecb-directories-buffer-name 0.21022727272727273 . 0.26)
+                                    (ecb-sources-buffer-name 0.21022727272727273 . 0.24)
+                                    (ecb-methods-buffer-name 0.21022727272727273 . 0.16)
+                                    (ecb-history-buffer-name 0.21022727272727273 . 0.32)))))
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-source-path (quote ("/home/matt" ("/home/matt/www/chartpin" "chartpin") ("/ssh:matt@intsims.matriclabs.com:/var/www/" "intsims-www") ("/ssh:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django"))))
+ '(ecb-source-path (quote ("/home/matt"
+                           ("/home/matt/www/chartpin" "chartpin")
+                           ("/ssh:matt@intsims.matriclabs.com:/var/www/" "intsims-www")
+                           ("/ssh:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django"))))
  '(ecb-tip-of-the-day nil)
  '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((js-indent-level . 2)))))

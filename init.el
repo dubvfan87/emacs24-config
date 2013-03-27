@@ -11,10 +11,6 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
 
-(when window-system
-    (x11-maximize-frame)
-)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Setup xterm mouse in console mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -45,7 +41,7 @@
 (global-set-key (kbd "C-x <backtab>") 'unindent-region) ; unindent region
 (defun tab-indent-region ()
     (interactive)
-	(setq fill-prefix "\t")
+  (setq fill-prefix "\t")
     (indent-region (region-beginning) (region-end) 4)
 )
 (defun unindent-region ()
@@ -71,16 +67,25 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/color-theme-6.6.0")
 (require 'color-theme)
 (color-theme-initialize)
-;;(color-theme-taming-mr-arneson)
 (add-to-list 'load-path "~/.emacs.d/extra")
-(require 'color-theme-tm)
-(color-theme-tm)
-(set-face-font 'default "InConsolata-10")
-(add-to-list 'default-frame-alist '(background-color . "#111111"))
+
+
+(when window-system
+  (set-face-font 'default "InConsolata-10")
+  (require 'color-theme-tm)
+  (color-theme-tm)
+  (add-to-list 'default-frame-alist '(background-color . "#111111"))
+  (x11-maximize-frame)
+)
+
+(unless window-system
+  (color-theme-taming-mr-arneson)
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Code Mode
+;; Code Mode 
+;; (Most code modes are included,  check before installing)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/elpa/js2-mode-20130307")
 (require 'js2-mode)
@@ -129,9 +134,9 @@
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(ecb-source-path (quote ("/home/matt"
-                           ("/home/matt/www/chartpin" "chartpin")
-                           ("/ssh:matt@intsims.matriclabs.com:/var/www/" "intsims-www")
-                           ("/ssh:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django"))))
+                          ("/home/matt/www/chartpin" "chartpin")
+                          ("/ssh:matt@intsims.matriclabs.com:/var/www/" "intsims-www")
+                          ("/ssh:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django"))))
  '(ecb-tip-of-the-day nil)
  '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((js-indent-level . 2)))))

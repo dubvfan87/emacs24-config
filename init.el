@@ -1,6 +1,7 @@
 (setq debug-on-error t)
 (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 (setq tramp-default-method "ssh")
+(auto-fill-mode -1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Maximize screen on load if X11 detected
@@ -71,7 +72,9 @@
 
 
 (when window-system
-  (set-face-font 'default "InConsolata-10")
+;;  (set-face-font 'default "Source Code
+  ;;  Pro:pixelsize=13:foundry=adobe:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
+  (set-face-font 'default "Inconsolata-10")
   (require 'color-theme-tm)
   (color-theme-tm)
   (add-to-list 'default-frame-alist '(background-color . "#111111"))
@@ -126,17 +129,11 @@
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(ecb-auto-activate t)
  '(ecb-layout-name "left8")
- '(ecb-layout-window-sizes (quote (("left8"
-                                    (ecb-directories-buffer-name 0.21022727272727273 . 0.26)
-                                    (ecb-sources-buffer-name 0.21022727272727273 . 0.24)
-                                    (ecb-methods-buffer-name 0.21022727272727273 . 0.16)
-                                    (ecb-history-buffer-name 0.21022727272727273 . 0.32)))))
+ '(ecb-layout-window-sizes (quote (("left8" (ecb-directories-buffer-name 0.21022727272727273 . 0.26) (ecb-sources-buffer-name 0.21022727272727273 . 0.24) (ecb-methods-buffer-name 0.21022727272727273 . 0.16) (ecb-history-buffer-name 0.21022727272727273 . 0.32)))))
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-source-path (quote ("/home/matt"
-                          ("/home/matt/www/chartpin" "chartpin")
-                          ("/ssh:matt@intsims.matriclabs.com:/var/www/" "intsims-www")
-                          ("/ssh:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django"))))
+ '(ecb-source-file-regexps (quote ((".*" ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|pyc\\|lib\\|dll\\|a\\|so\\|cache\\)$\\)\\)") ("^\\.\\(emacs\\|gnus\\)$")))))
+ '(ecb-source-path (quote ("/home/matt" ("/home/matt/www/chartpin" "chartpin") ("/sshx:matt@intsims.matriclabs.com:/var/www/" "intsims-www") ("/sshx:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django") ("/sshx:aiipor5@vps12141.inmotionhosting.com:~/www/" "aiip.org"))))
  '(ecb-tip-of-the-day nil)
  '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((js-indent-level . 2)))))

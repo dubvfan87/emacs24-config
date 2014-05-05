@@ -2,6 +2,7 @@
 (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 (setq tramp-default-method "ssh")
 (auto-fill-mode -1)
+(remove-hook 'text-mode-hook #'turn-on-auto-fill)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Maximize screen on load if X11 detected
@@ -133,7 +134,14 @@
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(ecb-source-file-regexps (quote ((".*" ("\\(^\\(\\.\\|#\\)\\|\\(~$\\|\\.\\(elc\\|obj\\|o\\|class\\|pyc\\|lib\\|dll\\|a\\|so\\|cache\\)$\\)\\)") ("^\\.\\(emacs\\|gnus\\)$")))))
- '(ecb-source-path (quote ("/home/matt" ("/home/matt/www/chartpin" "chartpin") ("/sshx:matt@intsims.matriclabs.com:/var/www/" "intsims-www") ("/sshx:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django") ("/sshx:aiipor5@vps12141.inmotionhosting.com:~/www/" "aiip.org"))))
+ ;; '(ecb-source-path (quote ("/home/matt" ("/home/matt/www/chartpin" "chartpin") ("/sshx:matt@intsims.matriclabs.com:/var/www/" "intsims-www") ("/sshx:matt@intsims.matriclabs.com:/var/django-projects/" "intsims-django") ("/sshx:aiipor5@vps12141.inmotionhosting.com:~/www/" "aiip.org"))))
+ '(ecb-source-path (quote (
+				"/home/matt"
+				("/sshx:matt@dev.intsims.com:/var/www/" "intsims-dev")
+				("/sshx:matt@intsims.com:/var/www/" "intsims-prod") 
+				("/sshx:matt@mmoyles.dyndns-ip.com:/home/matt" "matt-desktop")
+				("/sshx:matt@tradergrit.com:/var/www/tradergrit/src" "tradergrit")
+			)))
  '(ecb-tip-of-the-day nil)
  '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((js-indent-level . 2)))))
